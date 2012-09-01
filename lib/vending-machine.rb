@@ -12,10 +12,9 @@ class VendingMachine
   end
 
   def insert money
-    # TODO 許可リストを配列で定義
     return money unless VALID_MANEYS.include? money
     @total_amount += money
-    0
+    0 #正しいお金の場合
   end
 
   def refund
