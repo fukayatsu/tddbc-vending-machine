@@ -10,9 +10,8 @@ class VendingMachine
   end
 
   def insert money
-    if money == 1
-      return money
-    end
+    # TODO 許可リストを配列で定義
+    return money if money == 1
     @total_amount += money
   end
 
