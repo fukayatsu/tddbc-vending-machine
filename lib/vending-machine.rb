@@ -1,6 +1,8 @@
 # coding: utf-8
 
+
 class VendingMachine
+  VALID_MANEYS = [10, 50, 100, 500, 1000]
   def initialize
     @total_amount = 0
   end
@@ -11,14 +13,15 @@ class VendingMachine
 
   def insert money
     # TODO 許可リストを配列で定義
-    return money if money == 1
+    return money unless VALID_MANEYS.include? money
     @total_amount += money
+    0
   end
 
   def refund
-    total_amount = @total_amount
+    charge = @total_amount
     @total_amount = 0
-    total_amount
+    charge
   end
 
 end

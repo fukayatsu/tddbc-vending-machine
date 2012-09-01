@@ -15,6 +15,7 @@ describe VendingMachine do
     end
    end
 
+
   context "10円投入した時" do
     before do
       machine.insert 10
@@ -49,9 +50,23 @@ describe VendingMachine do
     end
   end
 
+  context "使えるお金が投入された時" do
+    it '100円を入れて0円が返ってくる' do
+      machine.insert(100).should == 0
+    end
+
+    it '1000円を入れて0円返ってくる' do
+      machine.insert(1000).should == 0
+    end
+  end
+
   context "想定外のお金が投入された時" do
     it '1円玉がそのまま返ってくる' do
       machine.insert(1).should == 1
+    end
+
+    it '5円玉がそのまま返ってくる' do
+      machine.insert(5).should == 5
     end
 
     context "1円玉を投入" do
