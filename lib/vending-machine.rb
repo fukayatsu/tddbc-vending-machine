@@ -10,6 +10,9 @@ class VendingMachine
   end
 
   def insert money
+    if money == 1
+      return money
+    end
     @total_amount += money
   end
 

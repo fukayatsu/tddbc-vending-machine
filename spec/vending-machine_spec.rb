@@ -49,4 +49,20 @@ describe VendingMachine do
     end
   end
 
+  context "想定外のお金が投入された時" do
+    it '1円玉がそのまま返ってくる' do
+      machine.insert(1).should == 1
+    end
+
+    context "1円玉を投入" do
+      before do
+        machine.insert 1
+      end
+
+      it '総計が0' do
+        machine.total_amount.should == 0
+      end
+    end
+  end
+
 end
