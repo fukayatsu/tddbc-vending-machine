@@ -2,7 +2,7 @@
 
 
 class VendingMachine
-  VALID_MANEYS = [10, 50, 100, 500, 1000]
+  VALID_MONEYS = [10, 50, 100, 500, 1000]
   def initialize
     @total_amount = 0
   end
@@ -12,7 +12,7 @@ class VendingMachine
   end
 
   def insert money
-    return money unless VALID_MANEYS.include? money
+    return money unless VALID_MONEYS.include? money
     @total_amount += money
     0 #正しいお金の場合
   end
