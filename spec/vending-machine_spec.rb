@@ -15,7 +15,7 @@ describe VendingMachine do
     end
    end
 
-  context "10円投入した場合" do
+  context "10円投入した時" do
     before do
       machine.insert 10
     end
@@ -29,7 +29,7 @@ describe VendingMachine do
     end
   end
 
-  context "100円と10円を投入した場合" do
+  context "100円と10円を投入した時" do
     before do
       machine.insert 100
       machine.insert 10
@@ -37,6 +37,10 @@ describe VendingMachine do
 
     it '総計110円' do
       machine.total_amount.should == 110
+    end
+
+    it '払戻しが110円' do
+      machine.refund.should == 110
     end
   end
 
