@@ -5,7 +5,7 @@ require 'vending-machine'
 describe VendingMachine do
   subject (:machine) { VendingMachine.new }
 
-  context "お金を投入していない時" do
+  context "初期状態" do
     it '総計0円' do
       machine.total_amount.should == 0
     end
@@ -13,7 +13,15 @@ describe VendingMachine do
     it '払い戻し0円' do
       machine.refund.should == 0
     end
-   end
+
+    it '在庫はコーラ(120円が５本)' do
+#      machine.stock.count.should == 5
+      machine.stocks.first.size.should == 5
+      machine.stocks.first.name.should == 'coke'
+      machine.stocks.first.price.should == 120
+
+    end
+  end
 
 
   context "10円投入した時" do
@@ -79,5 +87,4 @@ describe VendingMachine do
       end
     end
   end
-
 end
