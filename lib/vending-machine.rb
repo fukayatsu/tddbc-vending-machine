@@ -4,6 +4,7 @@ class VendingMachine
   def initialize
     @total_amount = 0
   end
+
   def total_amount
     @total_amount
   end
