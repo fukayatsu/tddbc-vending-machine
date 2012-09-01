@@ -14,7 +14,7 @@ class VendingMachine
   end
 
   def refund
-    0
+    @total_amount
   end
 
 end
