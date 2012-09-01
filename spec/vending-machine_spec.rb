@@ -27,6 +27,11 @@ describe VendingMachine do
     it '払い戻しが10円' do
       machine.refund.should == 10
     end
+
+    it '払い戻し後に総計0円' do
+      machine.refund
+      machine.total_amount.should == 0
+    end
   end
 
   context "100円と10円を投入した時" do
