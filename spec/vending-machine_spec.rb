@@ -16,9 +16,10 @@ describe VendingMachine do
 
     it '在庫はコーラ(120円が５本)' do
       #TODO いまここ
-      machine.stocks.first.size.should == 5
-      machine.stocks.first.name.should == 'coke'
-      machine.stocks.first.price.should == 120
+      stock = machine.stocks.first
+      stock.size.should == 5
+      stock.name.should == 'coke'
+      stock.price.should == 120
     end
   end
 
